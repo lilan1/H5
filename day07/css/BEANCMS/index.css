@@ -1,0 +1,45 @@
+@charset "utf-8";
+#service-con,#client-con,#about-con,.case-con,.copyright-con,.links-con{
+    width: 1000px;
+    margin: 0 auto;
+}
+#banner{
+    height: 520px;
+    background: red;
+}
+#service-con{
+    height: 230px;
+    background: chocolate;
+}
+#case{
+    height: 490px;
+    background: blue;
+}
+.case-con{
+    min-height: 490px;
+    background: pink;
+}
+#client-con{
+    height: 300px;
+    background: green;
+}
+#about-con{
+    height: 345px;
+    background: orange;
+}
+#copyright{
+    height: 30px;
+    background: yellow;
+}
+.copyright-con{
+    height: 30px;
+    background: purple;
+}
+#links{
+    height: 220px;
+    background: red;
+}
+.links-con{
+    height: 220px;
+    background: green;
+}
