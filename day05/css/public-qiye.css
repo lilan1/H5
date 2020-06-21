@@ -1,0 +1,51 @@
+@charset "utf-8";
+#header-con{
+    width: 1002px;
+    height: 100px;
+    margin: 0 auto;
+    /* background: pink; */
+
+    /* 可能图片截大了，对下面产生了影响 */
+    overflow: hidden;
+}
+.header_con_h1{
+    float: left;
+}
+.serach{
+    float: right;
+    border: 1px solid #e5e5e5;
+    background-color: #f1f1f1;
+    margin-top: 40px;
+    padding-left: 15px;
+}
+.serach input{
+    background: #f1f1f1;
+    float: left;
+    height: 24px;
+    margin-top: 3px;
+    font-size: 12px;
+}
+#navbar{
+    height: 58px;
+    background: #2d2d2d;
+}
+.navbar-con{
+    width:1002px;
+    height: 58px;
+    margin: 0 auto;
+}
+.navbar-con li{
+    float: left;
+    border-right:1px solid #494949;
+}
+.navbar-con li a{
+    height: 58px;
+    padding: 0 37px;
+    line-height: 58px;
+    color: white;
+    font-size: 12px;
+    
+}
+.navbar-con li:last-child{
+    border: 0;
+}

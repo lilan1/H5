@@ -1,0 +1,92 @@
+@charset "utf-8";
+#news-con,#product-con,#copyright-con{
+    width: 1002px;
+    margin: 0 auto;
+}
+#banner{
+    height: 465px;
+    /* background: blue; */
+}
+#banner img{
+    display: block;
+    margin: 0 auto;
+}
+#news-con{
+    height: 240px;
+    /* background: green; */
+}
+#news-con div{
+    float: left;
+    height: 205px;
+    padding: 35px 20px 0;
+}
+#news-con div h3{
+    font-size: 16px;
+
+}
+.news_con_left{
+    width: 460px;
+    /* background: pink; */
+}
+.news_con_center{
+    width: 200px;
+    background: #f1f1f1;
+}
+.news_list{
+    margin-top: 10px;
+}
+.news_list li{
+    font-size: 12px;
+    line-height: 28px;
+}
+.news_list a{
+    float: left;
+    color: #505050;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 320px;
+}
+.news_list span{
+    float:right;
+    color:#939393;
+}
+.news_con_center p{
+    font-size: 11px;
+    margin-top: 32px;
+    line-height: 25px;
+}
+.news_con_center p i{
+    font-size: 12px;
+}
+.news_con_center span{
+    font-size: 11px;
+    color:#939393;
+    display: block;
+    margin-top: 20px;
+    line-height: 24px;
+}
+.news_con_right{
+    width: 200px;
+    background: blue;
+    background: url(../images/人才招聘.jpg) no-repeat bottom center;
+}
+.news_con_right p{
+    font-size: 11px;
+    color:#505050;
+    display: block;
+    margin-top: 20px;
+    line-height: 24px;
+}
+#product-con{
+    height: 306px;
+    background: orange;
+}
+#about{
+    height: 250px;
+    background: red;
+}
+#copyright-con{
+    height: 82px;
+    background: blue;
+}
