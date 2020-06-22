@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .nav{
+            width: 800px;
+            height: 35px;
+            margin: 200px auto 0;
+            background-color: #9c0000;
+            list-style: none;
+            padding-left: 2px;
+            position: sticky;
+            top: 0;
+        }
+        .nav>li{
+           height: 28px; 
+           background-color:white;
+           float: left;
+           padding-top: 4px;
+           margin-right: 1px;
+           border-right: 1px solid black;
+           position: relative;
+        }
+        li a{
+            padding: 0 27px;
+            height: 28px;
+            display: block;
+            background-color: #ff6100;
+            font-size: 11px;
+            color: black;
+            line-height: 28px;
+            text-decoration: none;
+        }
+        li:hover{
+            background-color: #9c0000;
+        }
+        li:hover ul{
+            display: block;
+        }
+        li:hover>a{
+            background-color: #000;
+            color: yellow;
+        }
+        .banner{
+            height: 2000px;
+            background: pink;
+        }
+        .two{
+            position: absolute;
+            list-style: none;
+            left: 0;
+            padding-top: 3px;
+            padding-left: 0;
+            display: none;
+        }
+        .two li{
+            float: left;
+        }
+
+    
+
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">网站首页</a>
+            <ul class="two">
+                <li><a href="#">二级导航</a></li>
+                <li><a href="#">二级导航</a></li>
+                <li><a href="#">二级导航</a></li>
+                <li><a href="#">二级导航</a></li>
+                <li><a href="#">二级导航</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">网站首页</a>
+            <ul class="two">
+                <li><a href="#">二级导航</a></li>
+                <li><a href="#">二级导航</a></li>
+                <li><a href="#">二级导航</a></li>
+                <li><a href="#">二级导航</a></li>
+                <li><a href="#">二级导航</a></li>
+            </ul>
+        </li>
+        <li><a href="#">网站首页</a></li>
+        <li><a href="#">网站首页</a></li>
+        <li><a href="#">网站首页</a></li>
+        <li><a href="#">网站首页</a></li>
+    </ul>
+    <div class="banner"></div>
+</body>
+</html>
