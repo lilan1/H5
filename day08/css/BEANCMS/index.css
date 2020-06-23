@@ -1,0 +1,233 @@
+@charset "utf-8";
+#service-con,#client-con,#about-con,.copyright-con,.links-con{
+    width: 1000px;
+    margin: 0 auto;
+}
+#banner{
+    height: 520px;
+    /* background: red; */
+    position: relative;
+}
+#banner img{
+    display: block;
+    position: absolute;
+    left: 0;right: 0;
+    top: 0;bottom: 0;
+    margin: auto;
+}
+#service-con{
+    min-height: 200px;
+    /* background: chocolate; */
+    padding:15px 0 32px;
+}
+#service-con dl{
+    float: left;
+    width: 165px;
+    height: 183px;
+    border-right: 1px dashed #b0b0b0;
+    text-align: center;
+}
+#service-con dl:last-child{
+    border: 0;
+}
+#service-con h3{
+    font-size: 17px;
+    color: #9a587e;
+    line-height: 35px;
+    margin-top: 8px;
+}
+#service-con p{
+    font-size: 11px;
+    color: #7c7c7c;
+    line-height: 22px;
+}
+#case{
+    min-height: 490px;
+    background: #eeeeee;
+}
+.case-con{
+    min-height: 490px;
+    /* background: pink; */
+    width: 1000px;
+    margin: 0 auto;
+}
+.case_con_h3{
+    font-size: 20px;
+    color: #434542;
+    margin-top: 20px;
+    line-height: 75px;
+}
+.case_con_h3 b{
+    font-size: 37px;
+    color: #434446;
+}
+.case_dl{
+    width: 1020px;
+    min-height: 320px;
+    position: relative;
+}
+.case-con dl{
+    float: left;
+    width: 320px;
+    height: 320px;
+    margin-right: 20px;  
+}
+.case-con dl h4{
+    font-size: 16px;
+    line-height: 35px;
+    border-bottom: 1px solid #e3e3e3;
+}
+.case-con dd{
+    padding: 0 20px;
+    background:white;
+    height: 160px;
+}
+.case-con dl p{
+    font-size: 12px;
+    color: #848283;
+    line-height: 23px;
+    margin-top: 10px;
+}
+.case-con dd a{
+    display: block;
+    color: #848283;
+    float: right;
+    font-size: 12px;
+}
+.case_dl>a:first-of-type{
+    position: absolute;
+    top: 0;
+    right: -20px;
+}
+.case_dl>a:last-of-type{
+    position: absolute;
+    top: 40px;
+    right: -20px;
+}
+.case-con>a{
+    display: block;
+    width: 100px;
+    height: 25px;
+    /* float: left; */
+    margin: 20px auto;
+    font-size: 17px;
+    color: #575759;
+}
+#client-con{
+    height: 300px;
+    /* background: green; */
+}
+#client-con img{
+    /* display: block; */
+    border: 1px solid #d4d4d4;
+}
+#about-con{
+    height: 345px;
+    /* background: orange; */
+}
+#about-con div{
+    float: left;
+    height: 275px;
+    width: 459px;
+}
+#about-con h3{
+    font-size: 22px;
+    line-height: 42px;
+    color: #454346;
+}
+.about_con_left{
+    border-right: 1px dashed #b9b9b9;
+    padding-right: 40px;
+}
+.about_con_left p{
+    font-size: 11px;
+    color: #656668;
+}
+.about_con_left h4{
+    color: #212322;
+    font-size: 16px;
+    line-height: 56px;
+    margin-bottom: 10px;
+}
+#about-con div>a{
+    color: #d11418;
+    font-size: 12px;
+}
+.about_con_right{
+    padding-left: 40px;
+}
+.about_con_right ul li{
+    list-style-image: url('../../images/BEANCMS/li.jpg');
+    list-style-position: inside;
+    font-size: 12px;
+    color: #656668;
+    line-height: 38px;
+}
+.about_con_right ul li a{
+    color: #656668;
+    padding-left: 5px;
+}
+.about_con_right ul li span{
+    float: right;
+}
+#copyright{
+    height: 30px;
+    background: #4f4f4f;
+}
+.copyright-con{
+    height: 30px;
+    /* background: purple; */
+}
+.copyright-con p{
+    font-size: 12px;
+    color: #bfc3c2;
+    line-height: 30px;
+    float: right;
+}
+#links{
+    min-height: 220px;
+    background: #393939;
+}
+.links-con{
+    min-height: 185px;
+    /* background: green; */
+    padding-top: 35px;
+}
+.links_left{
+    width: 500px;
+    float: left;
+}
+.links_left img{
+    margin-right: 10px;
+}
+.links_left p{
+    font-size: 12px;
+    color: #9c9c9e;
+    margin-top: 20px;
+    line-height: 20px;
+}
+.links_left p b{
+    font-size: 16px;
+}
+.links_right{
+    float: left;
+    padding-left: 60px;
+    width: 440px;
+}
+.links_right ul{
+    float: left;
+    width: 110px;
+    margin-top: 18px;
+}
+.links_right ul li{
+    font-size: 12px;
+    line-height: 20px;
+}
+.links_right ul li a{
+    color: #9c9c9e;
+}
+.links_right h4{
+    float: left;
+    width: 110px;
+    color: #9c9c9e;
+}
