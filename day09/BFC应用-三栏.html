@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .left{
+            width: 200px;
+            height: 80%;
+            background: #000;
+            float: left;
+        }
+        .right{
+            width: 200px;
+            height: 80%;
+            background: pink;
+            float: right;
+        }
+        .center{
+            height: 100%;
+            background: orange;
+            /* 第一种解决方案 */
+            /* overflow: hidden; */
+
+            /* 第二种解决方案 */
+            /* padding: 0 200px; */
+        }
+
+        /* 第二种解决方案 */
+        .con{
+            height: 100%;
+            background: red;
+        }
+        .con1{
+            background: red;
+            height: 100%;
+            margin: 0 200px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="center">
+        <!-- 第二种解决方案:用padding将自适应部分挤到中间 -->
+        <!-- <div class="con"></div> -->
+
+        <!-- 第三种解决方案:用margin -->
+        <div class="con1"></div>
+    </div>
+    <!-- 两边宽度固定，中间自适应
+    先写两边结构，再写中间
+    -->
+</body>
+</html>
