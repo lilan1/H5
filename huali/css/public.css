@@ -1,0 +1,33 @@
+@charset "utf-8";
+.nav-con{
+    width: 1200px;
+    height: 73px;
+    margin: 0 auto;
+    /* background: #000; */
+    padding-top: 27px;
+}
+.nav-con h1{
+    float: left;
+}
+.nav{
+    height: 88px;
+    float: right;
+}
+.nav li{
+    float: left;
+}
+.nav li a{
+    width:88px;
+    height:44px;
+    border:1px solid transparent;
+    border-radius:2px;
+    display: block;
+    font-size:14px;
+    line-height: 44px;
+    text-align: center;
+    color: white;  
+}
+.nav li a:hover{
+    border-color: rgba(26,188,158,1);
+    color: rgba(26,188,158,1);
+}
