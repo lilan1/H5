@@ -5,7 +5,7 @@
     position: relative;
     overflow-x: hidden;
 }
-.header-con,.aboutus-con,.jiameng-con,.train-con,.online-con,.design-con,.partner-con,.news-con,.links-con,.copyright-con{
+.header-con,.aboutus-con,.jiameng-con,.train-con,.online-con,.design-con,.partner-con,.news-con{
     width: 1200px;
     margin: 0 auto;
 }
@@ -13,6 +13,12 @@
     height: 700px;
     position: relative;
 }
+.nav li a{
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
 .banner{
     width: 1200px;
     height: 700px;
@@ -97,22 +103,6 @@
 .con_text{
     width: 645px;
 }
-.con_text_h3{
-    font-size:26px;
-    line-height: 26px;
-    font-family:Microsoft YaHei;
-    font-weight:bold;
-    color:rgba(26,188,158,1);
-}
-.con_text_h4{
-    font-size:20px;
-    line-height: 20px;
-    margin-top: 12px;
-    font-family:Microsoft YaHei;
-    font-weight:bold;
-    color:rgba(51,51,51,1);
-    text-transform: uppercase;
-}
 .con_text_p{
     font-size:16px;
     font-family:Microsoft YaHei;
@@ -126,18 +116,7 @@
     margin-bottom: 30px;
 }
 .more_a{
-    width: 135px;
-    height: 40px;
-    display: block;
     margin-top: 42px;
-    float: right;
-    border:1px solid rgba(51,51,51,1);
-    line-height: 40px;
-    text-align: center;
-    font-size:16px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(51,51,51,1);
 }
 #jiameng,#online{
     background:rgba(242,242,242,1);
@@ -145,9 +124,6 @@
 .jiameng-con{
     padding: 58px 0 58px;
     /* background: #000; */
-}
-.text_center{
-    text-align: center;
 }
 .jiameng-con div{
     margin-top: 58px;
@@ -285,165 +261,4 @@
     font-family:Microsoft YaHei;
     font-weight:400;
     color:rgba(51,51,51,1);
-}
-#links{
-    background:rgba(237,237,237,1);
-    border-top: 5px solid rgba(189,189,189,1);
-}
-.links-con{
-    padding: 78px 0 94px;
-}
-
-.add{
-    padding-top: 30px;
-    margin-right: 125px;
-}
-.add p{
-    line-height: 23px;
-    font-size:14px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(85,85,85,1);
-}
-.add p:nth-of-type(1){
-    margin-top: 42px;
-}
-.add p:nth-of-type(2),.add p:nth-of-type(3){
-    margin-top: 13px;
-}
-.add p span{
-    font-size:14px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(25,187,157,1);
-}
-.add a{
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    border:1px solid rgba(157,157,157,1);
-    border-radius:2px;
-    color:rgba(85,85,85,1);
-    text-align: center;
-    line-height: 40px;
-    margin-top: 20px;
-}
-.add a span{
-    font-size: 22px;
-}
-.tel{
-    width: 142px;
-    margin-right: 82px;
-}
-.tel img{
-    margin: 0 auto;
-}
-.tel h3{
-    font-size:21px;
-    line-height: 21px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(85,85,85,1);
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 12px;
-}
-.tel h3 span{
-    font-size: 18px;
-}
-.tel p{
-    text-align: center;
-    font-size:21px;
-    line-height: 21px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(26,188,158,1);
-}
-.links_ul h5{
-    width:70px;
-    line-height:16px;
-    font-size:16px;
-    font-family:Microsoft YaHei;
-    font-weight:bold;
-    color:rgba(85,85,85,1);
-}
-.links_ul ul{
-    margin-top: 35px;
-}
-.links_ul ul li{
-    width: 70px;
-    height: 30px;
-    /* list-style-position: inside; */
-}
-.links_ul ul li a{
-    width: 70px;
-    height: 30px;
-    display: block;
-    line-height: 30px;
-    font-size:14px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(85,85,85,1);
-    background:url(../images/li.png) no-repeat left center;
-    padding-left: 12px;  
-}
-
-.news_ul{
-    width: 376px;
-}
-.news_ul h5{
-    line-height: 18px;
-    font-size:18px;
-    font-family:Microsoft YaHei;
-    font-weight:bold;
-    color:rgba(51,51,51,1);
-}
-.news_ul ul{
-    margin-top: 44px;
-}
-.news_ul ul li{
-    border-bottom:1px dashed rgba(157,157,157,1);
-    padding-bottom: 22px;
-    margin-bottom: 22px;
-}
-.news_ul ul li:last-child{
-    border: 0;
-}
-.news_ul ul a h6{
-    line-height: 14px;
-    font-size:14px;
-    font-family:Microsoft YaHei;
-    font-weight:bold;
-    color:rgba(51,51,51,1);
-    margin-bottom: 12px;
-}
-.news_ul ul a span{
-    line-height: 11px;
-    font-size:11px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    font-style:italic;
-    color:rgba(157,157,157,1);
-}
-#copyright{
-    background:rgba(226,226,226,1);
-}
-.copyright-con{
-    padding: 42px 0 40px;
-}
-.copyright_p{
-    width: 200px;
-    line-height: 24px;
-    font-size:14px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(85,85,85,1);
-}
-.contact_p{
-    line-height: 14px;
-    font-size:14px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(85,85,85,1);
-    margin-top: 7px;
 }
