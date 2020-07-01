@@ -1,0 +1,206 @@
+@charset "utf-8";
+#header{
+    width: 100%;
+    height: 700px;
+    position: relative;
+    overflow-x: hidden;
+}
+.header-con,.train-con,.courses-con,.teacher-con,.certification-con,.pervious-con{
+    width: 1200px;
+    margin: 0 auto;
+}
+.header-con{
+    height: 700px;
+    position: relative;
+}
+.nav li a{
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.banner{
+    width: 1200px;
+    height: 700px;
+    position: absolute;
+    top: 0;
+}
+.banner img{
+    position: absolute;
+    left: 50%;
+    margin-left: -960px;
+    z-index: -1;
+}
+.banner h2{
+    width:1200px;
+    height:50px;
+    font-size:50px;
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    color:rgba(255,255,255,1);
+    margin-top: 295px;
+    text-align: center;
+}
+.banner h3{
+    width:1200px;
+    height:24px;
+    font-size:24px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    text-align: center;
+    margin-top: 37px;
+    color:rgba(255,255,255,1);
+}
+.header-con>a{
+    width: 52px;
+    height: 52px;
+    display: block;
+    color: white;
+    font-size: 30px;
+    line-height: 52px;
+    text-align: center;
+    background:rgba(0,0,0,1);
+    border-radius:2px;
+    opacity:0.3;
+    position: absolute;   
+    top: calc(50% - 26px);
+}
+.left_a{
+    left: 0;
+}
+.right_a{
+    right: 0;
+}
+.banner a{
+    display: block;
+    height: 24px;
+    width: 40px;
+    font-weight: 700;
+    margin:150px auto 0;
+}
+.banner a span{
+    color:white;
+    font-size: 40px;
+}
+
+.courses-con,.teacher-con,.certification-con,.pervious-con{
+    padding: 58px 0;
+}
+#courses,#certification{
+    background:rgba(242,242,242,1);
+}
+
+/* 花艺培训 */
+.train-con{
+    padding: 138px 0 58px;
+}
+.train_con_text{
+    margin-left: 96px;
+    width: 645px;
+}
+.train_con_text p{
+    line-height: 28px;
+    font-size: 16px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    margin-top: 60px;
+    margin-bottom: 55px;
+}
+.train_con_text dl{
+    width: 192px;
+    float: left;
+    margin-bottom: 35px;
+}
+.train_con_text dl:nth-child(odd){
+    margin-left: 149px;
+    margin-right: 112px;
+}
+.train_con_text dl dt{
+    line-height: 16px;
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+    margin-bottom: 20px;
+}
+.train_con_text dl dt span{
+    color: #1abc9e;
+    margin-right: 20px;
+}
+.train_con_text dl dd{
+    line-height: 16px;
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(157,157,157,1);
+}
+
+/* 花艺课程 */
+.courses_con_dl{
+    width: 1245px;
+    margin-top: 60px;
+}
+.courses-con{
+    overflow: hidden;
+}
+.courses_con_dl dl{
+    float: left;
+    margin-right: 45px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+}
+.courses_con_dl dl dd a{
+    display: block;
+    font-size:19px;
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.courses_con_dl dl dt img{
+    transition: all 1s;
+}
+.courses_con_dl dl:hover dt img{
+    filter:brightness(0.4);
+}
+.courses_con_dl dl:hover dd a{
+    color:rgba(26,188,158,1);
+}
+.courses_con_dl dl dd p{
+    line-height: 14px;
+    font-size:14px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(156,156,156,1);
+}
+.courses_con_dl dt div{
+    width: 40px;
+    height: 40px;
+    background:rgba(242,242,242,1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 37px;
+    font-size:30px;
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    color:rgba(26,188,158,1);
+    position: absolute;
+    transition: all 1s;
+}
+.sum{
+    top: 116px;
+    left: -50px;
+}
+.lve{
+    top: 116px;
+    left: 390px;
+}
+.courses_con_dl dl:hover .sum{
+    left: 137px;
+}
+.courses_con_dl dl:hover .lve{
+    left: 203px;
+}
