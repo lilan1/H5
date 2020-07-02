@@ -204,3 +204,113 @@
 .courses_con_dl dl:hover .lve{
     left: 203px;
 }
+/* 名师师资 */
+.tea_con_dl{
+    width: 1140px;
+    margin: 60px 30px 58px;
+    position: relative;
+}
+.tea_con_dl dl{
+    float: left;
+    margin-right: 20px;
+}
+.tea_con_dl dl:last-of-type{
+    margin-right: 0;
+}
+.tea_con_dl h5{
+    width: 270px;
+    line-height:19px;
+    font-size:19px;
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    color:rgba(51,51,51,1);
+    text-align: center;
+    margin-top: 26px;
+    margin-bottom: 14px;
+}
+.tea_con_dl h6{
+    width:270px;
+    line-height:14px;
+    font-size:14px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    font-style:italic;
+    color:rgba(26,188,158,1);
+    text-align: center;
+    margin-bottom: 24px;
+}
+.tea_con_dl span{
+    display: block;
+    width:270px;
+    line-height:14px;
+    font-size:14px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(156,156,156,1);
+    text-align: center; 
+}
+.tea_con_dl>a{
+    position: absolute;
+    top: 150px;
+    width: 36px;
+    height: 36px;
+    display: block;
+    border-radius: 50%;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(85,85,85,1);
+    text-align: center;
+    line-height: 36px;
+    font-size: 18px;
+}
+.tea_left_a{
+    left: -18px;
+}
+.tea_right_a{
+    right: -18px;
+}
+.tea_con_dl>a:hover{
+    background:rgba(26,188,158,1);
+    color: white;
+}
+/* 花艺师认证 */
+.cer_con_img{
+    width: 360px;
+    height: 240px;
+    float: left;
+}
+.cer_con_text{
+    float: right;
+    width: 738px;
+}
+.cer_con_text p{
+    line-height: 28px;
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+    margin-bottom: 36px;
+    margin-top: 60px;
+}
+
+/* 往期回顾 */
+.pervious-con>div{
+    width: 550px;
+    height: 262px;
+}
+.pervious_con_img{
+    width: 262px;
+    height: 262px;
+}
+.pervious_con_text{
+    width: 256px;
+    margin-left: 31px;
+}
+.pervious_con_text p{
+    margin-top: 60px;
+    margin-bottom: 53px;
+    line-height: 28px;
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(51,51,51,1);
+}
