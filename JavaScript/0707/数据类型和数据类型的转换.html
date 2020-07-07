@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div0{
+            width: 100px;
+            height: 100px;
+            background: red;        
+            }
+    </style>
+</head>
+<body>
+    <div id="div0"></div>
+    <script>
+        var div0 = document.getElementById("div0");
+        var bool = true;
+        div0.onclick = function(){
+            bool = !bool;
+            div0.style.backgroundColor = bool ? "red" : "blue";
+        }
+
+        var _a = "32 1";
+        // _a = Number(_a);
+        // _a = parseInt(_a);
+        _a = parseFloat(_a);
+        console.log(_a);
+    </script>
+</body>
+</html>

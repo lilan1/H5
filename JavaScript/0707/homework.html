@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var _a = prompt("请输入第一个运算值：");
+        var _b = prompt("请输入运算符：");
+        var _c = prompt("请输入第二个运算值：");
+        _a = Number(_a);
+        _c = Number(_c);
+        if("+" == _b.trim()){
+            alert(_a+_c);
+        }else if("-" == _b.trim()){
+            alert(_a-_c);
+        }else if("*" == _b.trim()){
+            alert(_a*_c);
+        }else if("/" == _b.trim() && _c != 0){
+            alert(_a/_c);
+        }else{
+            alert("输入有误！");
+        }
+    </script>
+</body>
+</html>
