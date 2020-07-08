@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function valueAtBit(num, bit) {
+            var res = '';
+            while(num != 0){
+                res = num % 2 + res;
+                num = parseInt(num / 2);
+            }
+            while(res.length<8){
+                res = '0' + res;
+            }
+            return res[res.length - bit]; 
+
+            // 下面这种方式case通过率75%
+            // return res.charAt(bit); 
+        }
+    </script>
+</body>
+</html>

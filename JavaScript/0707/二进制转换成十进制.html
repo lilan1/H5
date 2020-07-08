@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function base10(str){
+            var temp = 0,
+                sum = 0;
+            for(var i=str.length;i>0;i--){
+                // console.log(str.charAt(i-1));
+                var temp = Number(str.charAt(i-1));
+                sum = sum +  temp * (2 ** (str.length - i));
+            }
+            return sum;
+        }
+        console.log(base10("11000000"));
+        // 放在OJ上面无法通过，case通过率0%
+
+    </script>
+    <script>
+        // 通过
+        function base101(str){
+            return parseInt(str,2);
+        }
+    </script>
+</body>
+</html>
