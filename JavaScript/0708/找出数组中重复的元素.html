@@ -9,21 +9,22 @@
 
 <body>
     <script>
-        function duplicates(arr) {
+        function duplicates(arr){
             var arr1 = [];
             var i = 0;
-            arr = arr.sort();
-            while (i++ < arr.length - 1) {
-                if (arr[i - 1] == arr[i]) {
-                    arr1.push(arr[i]);
+            var arr2 = arr.sort();
+            while(i < arr2.length){
+                if(arr2[i] == arr2[i+1] && arr2[i] != arr2[i-1]){
+                    arr1.push(arr2[i]);
                 }
+                i++;
             }
             return arr1;
         }
         arr = [1,2,5,5,4,3,4,3,6,9,8,10,8,5,5,5,5,5];
         console.log(duplicates(arr));
 
-        // OJ上不通过，case通过率0%，但是本地正常
+        // 解法有问题，缺了个判断条件
     </script>
 </body>
 
