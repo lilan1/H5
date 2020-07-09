@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var d = "add";
+        var obj = {
+            name: "李岚",
+            age: 18,
+            "tel": 17700000000,    //不建议
+            [d]: "天津市"   //变量作为key必须在外层增加中括号
+
+        }
+        var a = {
+            aa : 30
+        }
+        var b = {
+            bb:70
+        }
+        var arr = [1,2,3]
+        var arr1 = [4,5,6]
+        obj[undefined] = 10;
+        obj[null] = 20;
+        obj[a] = 50;
+        obj[b] = 60;  //对象都会转换为[Object Object]，所以会覆盖前面的，但是数组不会
+        obj[arr] = 100;
+        obj[arr1] = 110;
+
+        console.log(obj[undefined]);
+        console.log(obj[null]);
+        console.log(obj[a]);
+        console.log(obj);
+    </script>
+</body>
+
+</html>

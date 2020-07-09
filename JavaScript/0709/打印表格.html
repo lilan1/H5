@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var row = 10;
+        var col = 10;
+        var str = "<table>";
+        for(var i = 0,j;i<row;i++){
+            for(j = 0;j<col;j++) str += "<td></td>";
+        }
+
+        str = str + "</table>";
+        document.body.innerHTML += str;
+    </script>
+</body>
+</html>
