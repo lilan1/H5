@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function swap(num1, num2) {
+            var temp = num1;
+            num1 = num2;
+            num2 = temp;
+            return num1, num2;
+        }
+
+
+        // 第一版递归
+        /* function yueshu(num1,num2){
+            if(num1<num2) swap(num1,num2);
+            var yu = num1%num2;
+            if(yu != 0) yueshu(num2,yu);
+            else console.log(num2);          
+        } */
+
+
+
+        // yueshu(7890, 123456);
+
+
+        // 第二版递归
+        /* function yueshu(num1, num2) {
+            if (num1 < num2) swap(num1, num2);
+            var yu = num1 % num2;
+            var result;
+            if (yu != 0) result = yueshu(num2, yu);
+            else return num2;
+            return result;
+        } */
+        // console.log(yueshu(123456,7890))
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "李岚",
+            age: 18,
+            "tel": 17700000000,
+            school: {
+                name: "southwest",
+                add: "chongqing",
+                people: {
+                    dd: 55
+                }
+            }
+        }
+
+
+        function cloneObj(obj, target) {
+            target = target || {}
+            for (var prop in obj) {
+                if (typeof obj[prop] === "object" && obj[prop] !== null) {
+                    target[prop] = {};
+                    cloneObj(obj[prop], target[prop]);
+                } else {
+                    target[prop] = obj[prop];
+                }
+            }
+            return target;
+        }
+
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

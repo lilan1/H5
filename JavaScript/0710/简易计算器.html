@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(a,b,type){
+            if(isNaN(a) || isNaN(b)) return "非法数字";
+            switch(type){
+                case "+": return fn1(a,b);
+                case "-": return fn2(a,b);
+                case "*": return fn3(a,b);
+                case "/": return fn4(a,b);
+                default:return "字符非法";
+
+            }
+
+        }
+        function fn1(a,b){return a+b;}
+        function fn2(a,b){return a-b;}
+        function fn3(a,b){return a*b;}
+        function fn4(a,b){
+            if(b===0) return "除数为0"; 
+            return a/b;
+        }
+
+        console.log(fn(5,0,"k"));
+    </script>
+</body>
+</html>

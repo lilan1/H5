@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div id="div1"></div>
+    <div>
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+        <div id="div4"></div>
+        <div</div>
+        <div id="div5"></div>
+    </div>
+
+    <script>
+        function getDOMibj(parent, obj) {
+            obj = obj || {};
+            parent = parent || document.body;
+            if (parent.id) obj[parent.id] = parent;
+            for(let i = 0;i<parent.children.length;i++){
+                getDOMibj(parent.children[i],obj);
+            }
+            return obj;
+        }
+        console.log(getDOMibj());
+    </script>
+</body>
+
+</html>
