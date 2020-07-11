@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 将一组单词存在一个数组中，并按照正序和倒序分别显示这些单词
+        var str = "lilan wuyuanyuan duzijing zhuyaoru lilan wuyuanyuan duzijing zhuyaoru";
+        
+        var arr = str.split(" ")
+        console.log(arr);
+        var arr1 = [];
+        var str_new = '';
+        for(let i = 0; i < arr.length; i++){
+            str_new = '';
+            for(let j = arr[i].length-1;j>=0;j--){
+                str_new += arr[i][j];
+            }
+            // console.log(str_new);
+            arr1[i] = str_new;
+        }
+        console.log(arr1);
+    </script>
+</body>
+</html>
