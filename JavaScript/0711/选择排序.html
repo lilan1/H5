@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = [15, 78, 36, 48, 12, 3, 6, 4, 96]
+
+        // 交换两个值
+        function exch(array,index1,index2){
+            var temp = array[index1];
+            array[index1] = array[index2];
+            array[index2] = temp;
+        }
+
+        // 循环实现从小到大排序
+        /* function mySort(arr) {
+            var N = arr.length;
+            var minIndex;
+            for (var i = 0; i < N-1; i++) {
+                minIndex = i;
+                for (let j = i ; j < N; j++) {
+                    if(arr[minIndex] > arr[j]) minIndex = j;
+                }
+                // if(min != i) exch(arr[min],arr[i])
+                if(minIndex != i) exch(arr,i,minIndex);    
+            }
+            return arr;
+        } */
+
+      
+       /*  function mySort(arr){
+            var N = arr.length;
+            var minIndex;
+            for(var i = 0;i<N-1;i++){
+                minIndex = i;
+                for(var j = i;j<N;j++){
+                    if(arr[minIndex] > arr[j]) minIndex = j;
+                }
+                if(minIndex != i) exch(arr,i,minIndex);
+            }
+            return arr;
+        } */
+
+        /* function mySort(arr){
+            var N = arr.length;
+            var mixIndex;
+            for(var i = 0;i<N-1;i++){
+                mixIndex = i;
+                for(var j = i;j<N;j++){
+                    if(arr[mixIndex]>arr[j]) mixIndex = j;
+                }
+                if(mixIndex != i) exch(arr,i,mixIndex);
+            }
+            return arr;
+        } */
+
+       /*  function mySort(arr){
+            var N = arr.length;
+            var minIndex;
+            for(var i = 0;i<N-1;i++){
+                minIndex = i;
+                for(var j = i;j<N;j++){
+                    if(arr[minIndex] > arr[j]) minIndex = j;
+                }
+                if(minIndex != i) exch(arr,i,minIndex);
+            }
+            return arr;
+        }
+ */
+
+        console.log(mySort(arr1));
+    </script>
+</body>
+
+</html>
