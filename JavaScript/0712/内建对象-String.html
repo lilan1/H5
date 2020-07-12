@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = "lilan wuyuanyuan zhuyaoru duzijing wuyuanyuan"
+
+        // string属性：length
+        console.log("length: " + str.length);
+
+        // charAt()返回在指定位置的字符
+        console.log("charAt: " + str.charAt(4));
+
+        // charCodeAt()返回在指定的位置的字符的Unicode编码
+        console.log("charCodeAt: " + str.charCodeAt(4));
+
+        // concat()连接字符串
+        console.log("concat: " + 'name:'.concat(str));
+
+        // fromCharCode()从字符编码创建一个字符串
+        console.log("fromCharCode: " + String.fromCharCode(65));
+
+        // indexOf()检索字符串,返回某个指定的字符串值在字符串中首次出现的位置，没有找到返回-1，，如果有重复的值，返回前面的
+        console.log("indexOf: " + str.indexOf('wuyuanyuan'));
+
+        // lastIndexOf()从后向前检索字符串,,返回某个指定的字符串值在字符串中首次出现的位置，没有找到返回-1，如果有重复的值，返回后面的
+        console.log("lastIndexOf: " + str.lastIndexOf('wuyuanyuan'));
+
+        // replace()替换第一个与正则表达式匹配的子串
+        console.log("replace: " + str.replace('wuyuanyuan', 'fusiyu'));
+
+        // 将字符串变成初始
+        str.replace('fusiyu: ', 'wuyuanyuan')
+
+        // search()检索与正则表达式向匹配的值,返回某个指定的字符串值在字符串中首次出现的位置
+        console.log("search: " + str.search('wuyuanyuan'));
+
+        // slice()提取字符串的判断，并在新的字符串中返回被提取的部分
+        console.log("slice: " + str.slice(2, 10));
+
+        // split()把字符串分割为字符串数组
+        console.log("split: " + str.split(" "));
+
+        // substr()从起始索引号提取字符串中指定数目的字符
+        console.log("substr: " + str.substr(2, 3));
+
+        // substring()提取字符串中两个指定的索引号之间的字符
+        console.log("substring: " + str.substring(2, 3));
+
+        // toLocaleLowerCase()把字符串转换为小写
+        console.log("toLocaleLowerCase: " + str.toLocaleLowerCase());
+
+        // toLocaleUpperCase()把字符串转换为大写
+        console.log("toLocaleUpperCase: " + str.toLocaleUpperCase());
+
+        // toLowerCase()把字符串转换为小写
+        console.log("toLowerCase: " + str.toLowerCase());
+
+        // toUpperCase()把字符串转换为大写
+        console.log("toUpperCase: " + str.toUpperCase());
+
+    </script>
+</body>
+
+</html>

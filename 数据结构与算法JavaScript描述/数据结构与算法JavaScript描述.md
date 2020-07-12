@@ -10,13 +10,12 @@
      var numbers = [];    //创建一个长度为0数组
      ```
      
-   
    + 构造函数创建
    
      ```
      var numbers = new Array();//一个自然数参数，将作为数组的长度，否则作为数组元素
      ```
-
+   
 2. 由字符串生成数组，调用字符串的split方法可以生成数组
 
    ```
@@ -235,6 +234,55 @@ List.prototype = {
 
 }
 ```
+
+
+
+# 第4章 栈
+
+```
+function Stack(element){
+	this.dataStore = [];
+	this.top = 0;
+
+	this.push(element);    //将一个元素压入栈中
+	this.pop();     //从栈顶弹出元素并返回
+	this.peek();        //返回栈顶的元素不弹出
+	this.clear();   //清空栈
+	this.length();      //返回栈长
+}
+
+Stack.prototype = {
+
+	//将一个元素压入栈中
+	push:function(element){
+		return this.dataStore[this.top++] = element;
+	},
+
+	//从栈顶弹出元素并返回
+	pop:function(){
+		return this.dataStore[--this.top];
+	},
+
+	//返回栈顶的元素不弹出
+	peek:function(){
+		return this.dataStore[this.top-1];
+	},
+
+	//清空栈
+	clear:function(){
+		delete this.dataStore;
+		this.dataStore = []
+		this.top = 0;
+	},
+
+	//返回栈长
+	length:function(){
+		return this.top;
+	}
+}
+```
+
+
 
 
 
