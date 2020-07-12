@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Stack(element){
+            this.dataStore = [];
+            this.top = 0;
+
+            this.push(element);    //将一个元素压入栈中
+            this.pop();     //从栈顶弹出元素并返回
+            this.peek();        //返回栈顶的元素不弹出
+            this.clear();   //清空栈
+            this.length();      //返回栈长
+        }
+
+        Stack.prototype = {
+
+            //将一个元素压入栈中
+            push:function(element){
+                return this.dataStore[this.top++] = element;
+            },
+
+            //从栈顶弹出元素并返回
+            pop:function(){
+                return this.dataStore[--this.top];
+            },
+
+            //返回栈顶的元素不弹出
+            peek:function(){
+                return this.dataStore[this.top-1];
+            },
+
+            //清空栈
+            clear:function(){
+                delete this.dataStore;
+                this.dataStore = []
+                this.top = 0;
+            },
+
+            //返回栈长
+            length:function(){
+                return this.top;
+            }
+        }
+
+        var stack1 = new Stack();
+        stack1.push(100);
+        stack1.push(200)
+        stack1.push(300)
+        stack1.push(400)
+        stack1.push(500)
+        console.log(stack1.peek())
+        console.log(stack1.pop())
+        console.log(stack1.peek());
+        console.log(stack1.length())
+
+
+    </script>
+</body>
+</html>
