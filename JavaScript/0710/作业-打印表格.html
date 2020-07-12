@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,10 +32,10 @@
         ];
 
         // 第一版
-        /* function tablePhoneInfo(arr) {
+        function tablePhoneInfo(arr) {
             var str = "<table>";
             for (let i = 0; i < arr.length; i++) {
-                if(i != 0) str += "<tr>";
+                str += "<tr>";
                 for (let elem in arr[i]) {
                     if(i===0){
                         str += ("<th>"+elem+ "</th>");
@@ -43,14 +43,14 @@
                     }
                     str += ("<td>" + arr[i][elem] + "</td>");
                 }
-                if(i != 0) str += "</tr>";
+                str += "</tr>";
             }
             str += "</table>";
             document.body.innerHTML += str;
-        } */
+        }
 
         // 第二版
-        function tablePhoneInfo(arr) {
+        /* function tablePhoneInfo(arr) {
             var str = "<table><tr>";
             for(let j in arr[0]) str += ("<th>"+j+ "</th>");
             str += "</tr>"
@@ -61,7 +61,9 @@
             }
             str += "</table>";
             document.body.innerHTML += str;
-        }
+        } */
+
+
         tablePhoneInfo(arr);
     </script>
 </body>
