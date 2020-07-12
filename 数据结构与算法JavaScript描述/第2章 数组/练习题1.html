@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 题目的意思应该不是创建构造函数，但是用构造函数比较方便。。。。。
+
+        
+        // 创建一个记录学生成绩的对象，提供一个添加成绩的方法，以及一个显示学生平均成绩的方法
+        function Student(name, chinese, mathes, english) {
+            this.name = name;
+            this.chinese = chinese;
+            this.mathes = mathes;
+            this.english = english;
+            this.averageGrades();
+        }
+
+        Student.prototype = {
+            // 求一个学生成绩的平均值
+            averageGrades: function () {
+                if (isNaN(this.chinese) || isNaN(this.mathes) || isNaN(this.english)) return "成绩数字非法";
+                if (this.chinese < 0 || this.mathes < 0 || this.english < 0) return "成绩不能小于0";
+                return (this.chinese + this.mathes + this.english) / 3;
+            }
+        }
+
+
+        var stu1 = new Student("李岚", 80, 90, 70);
+        var stu2 = new Student("吴媛媛", 80, 90, 70);
+        var stu3 = new Student("杜子静", 80, 90, 70);
+        var stu4 = new Student("朱要茹", 80, 90, 70);
+        console.log(stu1);
+        console.log(stu2);
+        console.log(stu3);
+        console.log(stu4);
+
+
+
+
+
+    </script>
+</body>
+
+</html>
