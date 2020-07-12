@@ -27,9 +27,7 @@
             this.next();    // 将当前位置前移一位
             this.currPos();    // 返回列表的当前位置
             this.moveTo(position);    // 将当前位置移动到指定位置
-
-            // 辅助方法
-            this.find();
+            this.find(element);    //在列表中找到element 
         }
 
 
@@ -83,7 +81,7 @@
                 return false;
             },
 
-            // 辅助方法，在列表中找到element
+            // 在列表中找到element
             find: function (element) {
                 for (var i = 0; i < this.dataStore.length; i++) {
                     if (this.dataStore[i] == element) return i;
@@ -121,14 +119,37 @@
                 this.pos = position;
             }
 
-
-
         }
 
-
+        //测试
         var list1 = new List();
         list1.append(5);
+        list1.append(6);
+        list1.append(7);
+        list1.append(10);
+        list1.append(9);
+        list1.append(11);
         console.log(list1.toString());
+        list1.insert(100,10)
+        console.log(list1.toString());
+        console.log(list1.length())
+        list1.remove(7);
+        console.log(list1.toString());
+        console.log(list1.find(6));
+        list1.front()
+        console.log(list1.getElement())
+        list1.end()
+        console.log(list1.getElement())
+        list1.prev()
+        console.log(list1.getElement());
+        list1.next()
+        console.log(list1.getElement())
+        console.log(list1.currPos());
+        list1.moveTo(3);
+        console.log(list1.getElement())
+
+
+
     </script>
 </body>
 

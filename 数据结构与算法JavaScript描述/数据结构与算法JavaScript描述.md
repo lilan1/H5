@@ -10,12 +10,13 @@
      var numbers = [];    //创建一个长度为0数组
      ```
      
-+ 构造函数创建
-  
-  ```
+   
+   + 构造函数创建
+   
+     ```
      var numbers = new Array();//一个自然数参数，将作为数组的长度，否则作为数组元素
-  ```
-  
+     ```
+
 2. 由字符串生成数组，调用字符串的split方法可以生成数组
 
    ```
@@ -114,6 +115,128 @@
 ### 对象数组
 
 ### 对象中的数组
+
+
+
+# 第3章 列表
+
+```
+function List(element,after,position) {
+	this.listsize = 0;
+	this.pos;
+	this.dataStore = [];
+
+	this.length();    // 返回列表的长度             
+	this.clear();    // 清空列表           
+	this.toString();    // 返回列表的字符串形式
+	this.getElement();    // 返回当前位置的元素
+	this.insert(element, after);    // 在现有元素后面插入新元素
+	this.append(element);    // 在列表的末尾添加新元素
+	this.remove();    // 在列表中删除元素
+	this.front();    // 将列表的当前位置移动到第一个元素
+	this.end();    // 将列表的当前位置移动到最后一个元素
+	this.prev();    // 将当前位置后移一位
+	this.next();    // 将当前位置前移一位
+	this.currPos();    // 返回列表的当前位置
+	this.moveTo(position);    // 将当前位置移动到指定位置
+
+	// 辅助方法
+	this.find();
+}
+
+
+List.prototype = {
+
+	// 返回列表的长度
+	length: function () {
+		return this.listsize;
+	},
+
+	// 清空列表
+	clear: function () {
+		delete this.dataStore;
+		this.dataStore = [];
+		this.listsize = this.pos = 0;
+	},
+
+	// 返回列表的字符串形式
+	toString: function () {
+		return this.dataStore;
+	},
+
+	// 向列表末尾添加元素
+	append: function (element) {
+		this.dataStore[this.listsize++] = element;
+	},
+
+	// 返回当前位置的元素
+	getElement: function () {
+		return this.dataStore[this.pos];
+	},
+
+	// 在现有元素后面插入新元素
+	insert: function (element, after) {
+		var insertPos = this.find(after);
+		if (insertPos > -1) {
+			this.dataStore.splice(insertPos + 1, 0, element)
+			++this.listsize;
+			return true;
+		}
+	},
+
+	// 在列表中删除元素
+	remove: function (element) {
+		var foundId = this.find(element);
+		if (foundId > -1) {
+			this.dataStore.splice(foundId, 1);
+			--this.listsize;
+			return true;
+		}
+		return false;
+	},
+
+	// 辅助方法，在列表中找到element
+	find: function (element) {
+		for (var i = 0; i < this.dataStore.length; i++) {
+			if (this.dataStore[i] == element) return i;
+		}
+		return -1;
+	},
+
+	// 将列表的当前位置移动到第一个元素
+	front: function () {
+		this.pos = 0;
+	},
+
+	// 将列表的当前位置移动到最后一个元素
+	end: function () {
+		this.pos = this.listsize - 1;
+	},
+
+	// 将当前位置后移一位
+	prev: function () {
+		if (this.pos > 0) --this.pos;
+	},
+
+	// 将当前位置前移一位
+	next: function () {
+		if (this.pos < this.listsize - 1) ++this.pos;
+	},
+
+	// 返回列表的当前位置
+	currPos:function(){
+		return this.pos;
+	},
+
+	// 将当前位置移动到指定位置
+	moveTo:function(position){
+		this.pos = position;
+	}
+
+}
+```
+
+
 
 
 
