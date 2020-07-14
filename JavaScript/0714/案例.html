@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第一种
+        // function randomColor(){
+        //     var col="#";
+        //     for(var i=0;i<6;i++){
+        //         col+=Math.floor(Math.random()*16).toString(16);
+        //     }
+        //     return col;
+        // }
+
+
+        // 第二种
+        // function randomColor(){
+        //     var col="rgb";
+        //     for(var i=0;i<3;i++){
+        //         col+=Math.floor(Math.random()*256)+",";
+        //     }
+        //     col = col.slice(0,-1);
+        //     return col;
+        // }
+
+
+        // 第三种
+        // function randomColor(){
+        //     return "#"+Array(6).fill(Math.floor(Math.random()*16).toString(16))
+        // }
+
+
+
+        // var str = "中国的四大名著中《西游记》是吴承恩写的";
+        // console.log(str.substr(str.indexOf("《")+1,"西游记".length));
+        // console.log(str.substring(str.indexOf("《")+1,str.indexOf("》")));
+
+
+        var url = "https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.9.32af1d36SM0ep9&id=619388309101&skuId=4373537628895&areaId=500100&user_id=758378328&cat_id=2&is_b=1&rn=e6567a9da5db99bebbd1cb06d689ad22"
+        // url = url.split("?").shift().join("");
+
+        // function getUrlPram(url) {
+        //     var obj = {};
+        //     url = url.split("?")[1];
+        //     var arr = url.split("&");
+        //     for (var i = 0; i < arr.length; i++) {
+        //         var arr1 = arr[i].split("=");
+        //         obj[arr1[0]] = arr1[0];
+        //     }
+        //     return obj;
+        // }
+        // 重写1
+        // function getUrlPram(url){
+        //     return url.split("?")[1].split("&").reduce(function(value,item){
+        //         var arr=item.split("=");
+        //         value[arr[0]] = arr[1];
+        //         return value;
+        //     },{})
+        // }
+        // 重写2
+        function getUrlPram(url){
+            return url.split("?")[1].split("&").reduce(function(value,item){
+                var arr = item.split("=");
+                value[arr[0]] = arr[1];
+                return value;
+            },{})
+        }
+
+        console.log(getUrlPram(url));
+
+
+    </script>
+</body>
+
+</html>

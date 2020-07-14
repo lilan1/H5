@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function flatMap(arr) {
+            var arr_new = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].constructor !== Array) {
+                    arr_new[arr_new.length] = arr[i];
+                    continue;
+                }
+                for (var j = 0; j < arr[i].length; j++) {
+                    arr_new[arr_new.length] = arr[i][j];
+                }
+            }
+            return arr_new;
+        }
+
+        var arr2 = [[1,2,3,],10,[4,5,6],[7,8,9]];
+        console.log(flatMap(arr2));
+    </script>
+</body>
+
+</html>
