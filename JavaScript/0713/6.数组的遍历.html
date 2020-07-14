@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // forEach
+        function forEach(arr, fn) {
+            for (var i = 0; i < arr.length; i++) {
+                if (i in arr) fn(arr[i], i, arr)
+            }
+        }
+
+        // map
+        function mapp(arr, fn) {
+            var arr1 = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (i in arr) arr1[i] = fn(arr[i], i, arr);
+            }
+            return arr1;
+        }
+    </script>
+</body>
+
+</html>

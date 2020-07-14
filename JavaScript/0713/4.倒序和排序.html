@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // reverse，当前数组按照倒装顺序将原数组颠倒，并且返回原数组，改变原数组
+        // var arr = [1, 2, 3, , 5];
+        // console.log(arr.reverse());
+
+
+
+
+
+        // 重构reverse方法
+        function reverse(arr) {
+            var N = arr.length;
+            var arr1 = [];
+            for (let i = 0; i < N; i++) {
+                if (i in arr) arr1[i] = arr[i];
+            }
+            arr.length = 0;
+            for (let i = N - 1; i >= 0; i--) {
+                if (i in arr1) arr[N - 1 - i] = arr1[i];
+            }
+            return arr;
+        }
+
+        // 测试重构的reverse方法
+        // var arr = [1, 2, 3, , 5];
+
+        // console.log(arr.reverse());
+        // console.log(reverse(arr));
+
+
+
+
+
+
+        // 冒泡排序
+        function mao(arr) {
+            var len = arr.length;
+            var temp;
+            while (len > 0) {
+                for (var i = 0; i < len-1; i++) {
+                    if(arr[i]>arr[i+1]){
+                        temp = arr[i];
+                        arr[i] = arr[i+1];
+                        arr[i+1] = temp;
+                    }
+                }
+                len--;
+            }
+            return arr;
+        }
+
+        // var arr = [1,3,3,6,8,2,3,5,6,3,7,9,8,3,6,7,3,8,9];
+        // console.log(mao(arr));
+
+
+
+
+
+
+        // 选择排序
+        function selectionSort(arr) {
+            var minIndex;
+            var N = arr.length;
+            var temp;
+            for (let i = 0; i < N; i++) {
+                minIndex = i;
+                for (var j = i; j < N; j++) {
+                    if (arr[minIndex] > arr[j]) minIndex = j;
+                }
+                if (minIndex != i) {
+                    temp = arr[minIndex];
+                    arr[minIndex] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+            return arr;
+        }
+
+        // 测试选择排序
+        // var arr = [1,3,3,6,8,2,3,5,6,3,7,9,8,3,6,7,3,8,9];
+        // console.log(selectionSort(arr));
+
+
+
+
+
+
+        // 快速排序
+        // 第一种方法
+        function quickSort(arr) {
+            if (arr.length <= 1) return arr;
+            var pivotIndex = Math.floor(arr.length / 2);
+            var pivot = arr.splice(pivotIndex, 1)[0];//取出中间的那个元素          
+            var left = [],
+                right = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] < pivot) left.push(arr[i]);
+                else right.push(arr[i]);
+            }
+            return quickSort(left).concat(pivot, quickSort(right));
+        }
+
+
+
+        // 测试快速排序
+        var arr = [1, 3, 6, 8, 2, 3, 5, 6, 3, 7, 9, 8, 3, 6, 7, 3, 8, 9];
+        quickSort(arr);
+        console.log(quickSort(arr));
+
+
+
+    </script>
+</body>
+
+</html>

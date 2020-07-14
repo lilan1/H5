@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [1];
+        // push在数组的尾部添加若干个元素，返回数组的新长度
+        // var len = arr.push(5, 6, 7, 8);
+        // console.log(len);
+
+        // while (arr.push({}) < 10);//循环给尾部添加若干个元素
+        // arr[1].a = 10;
+        // console.log(arr);
+        // 添加的对象没有引用关系
+
+
+
+
+
+
+        // pop删除数组尾部的最后一个元素，并且将删除的元素返回
+        // var arr = [1, 2, 3, 4, 5]
+        // var element = arr.pop();
+        // console.log(element, arr);
+
+        // 删除到某个元素为止，指定的元素（3）也会被删除，
+        // while(arr.pop() != 3);
+        // console.log(arr);
+
+
+
+
+        // 删除数组为空，使用length一个一个向前删除
+        // 如果数组中存储的是对象，必须将所有的对象引用设为null
+        // while (arr.length > 0) {
+        //     // 考虑到数组元素可能是对象的原因
+        //     arr[arr.length - 1] = null;
+        //     arr.pop();
+        // }
+
+        // 下面这种写法效率更高
+        // for (let i = 0; i < arr.length; i++) {
+        //     arr[i] = null;
+        // }
+        // arr.length = 0;
+
+
+
+
+
+        // unshift在数组的头部添加若干个元素，并且返回这个数组的新长度
+        // var arr = [1, 2, 3, 4, 5]
+        // var len = arr.unshift(100, 200);
+        // console.log(len, arr);
+
+        // shift将数组元素的第一个元素删除，并返回这个元素
+        // var elem = arr.shift();
+        // console.log(elem, arr);
+
+
+
+
+
+
+        // 这四个方法，操作后改变原数组，原数组的引用关系不变
+
+
+
+
+
+        // push方法的重构
+        function push(arr) {
+            for (let i = 1; i < arguments.length; i++) {//这里i初始为1的原因是因为第一个参数是数组本身
+                arr[arr.length] = arguments[i];//将传进来的参数一个一个遍历，然后添加进arr数组
+            }
+            return arr.length;//返回添加后数组的长度
+        }
+
+        // 测试重构的方法
+        // var arr = [1,2,3,4,5,6];
+        // console.log(push(arr,7,8,9),arr);
+
+
+
+
+
+        // pop方法的重构
+        // 第一版，没有考虑到空数组的情况
+        // function pop(arr){
+        //     var elem = arr[arr.length-1];
+        //     arr[arr.length-1] = null;
+        //     arr.length -= 1;
+        //     return elem;
+        // }
+        // 改进
+        function pop(arr){
+            var elem = arr[arr.length-1];
+            if(arr.length>0) arr.length--;
+            return elem;
+        }
+
+        // 测试重构的pop方法
+        // var arr = [1,2];
+        // console.log(pop(arr),arr);
+        // console.log(pop(arr),arr);
+        // console.log(pop(arr),arr);
+
+        // 对比JavaScript的pop方法
+        // console.log(arr.pop());
+        // console.log(arr.pop());
+        // console.log(arr.pop());
+
+
+
+
+
+
+
+        // unshit方法重构
+        // 在数组的头部添加若干个元素，并返回这个数组的新长度
+
+        // 第一种方式，将原数组的元素从后往前依次后移一定的位数，然后将参数添加到数组前面
+        // function unshift(arr) {
+        //     var len = arr.length;
+        //     for (let i = len - 1; i >= 0; i--) {
+        //         arr[i + arguments.length - 1] = arr[i];
+        //         arr[i] = null;
+        //     }
+        //     for(let i = 0;i<arguments.length-1;i++){
+        //         arr[i] = arguments[i+1];
+        //     }
+        //     return arr.length;
+        // }
+
+        // 第二种方式，拼接的方式，先将原数组的所有元素放在一个新数组中，然后将原数组清空，再将添加的元素放入原数组，最后再将新数组中存储的原数组最初的元素拼接在后面
+        // function unshift(arr) {
+        //     var arr1 = [];
+        //     var N = arguments.length;
+        //     for (let i = 0; i < arr.length; i++) {
+        //         arr1[i] = arr[i];
+        //         arr[i] = null;
+        //     }
+        //     arr.length = 0;
+        //     for (let i = 1; i < N; i++) {
+        //         arr[i - 1] = arguments[i];
+        //     }
+        //     for (let i = 0; i < arr1.length; i++) {
+        //         arr[i + N - 1] = arr1[i];
+        //     }
+        //     return arr.length;
+        // }
+
+        // 测试重构的unshift方法
+        // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        // console.log(unshift(arr,10,20,30));;
+        // console.log(arr);
+
+
+
+
+
+
+        // shift方法的重构   
+        // shift将数组元素的第一个元素删除，并返回这个元素 
+        // function shift(arr) {
+        //     var elem = arr[0];
+        //     for (let i = 0; i < arr.length-1; i++) {
+        //         arr[i] = arr[i+1];
+        //     }
+        //     if(arr.length>0){
+        //         arr[arr.length-1] = null;
+        //         arr.length--;
+        //     }
+        //     return elem;
+        // }
+
+        // 测试重构的unshift方法
+        // var arr = [1, 2, 3];
+        // console.log(shift(arr));;
+        // console.log(shift(arr));;
+        // console.log(shift(arr));;
+        // console.log(shift(arr));;
+        // console.log(arr);
+
+
+
+    </script>
+</body>
+
+</html>

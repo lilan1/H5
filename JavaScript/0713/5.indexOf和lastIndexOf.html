@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // indexOf()从后向前查找
+        function indexOf(arr, search, index) {
+            if (index === undefined) index = 0;
+            for (var i = index; i < arr.length; i++) {
+                if (arr[i] == search) return i;
+            }
+            return false;
+        }
+
+
+        // lastIndexOf()
+        function lastIndexOf(arr, search, index) {
+            if (index === undefined) index = 0;
+            for (var i = arr.length; i >= 0; i--) {
+                if (arr[i] == search) return i;
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>
