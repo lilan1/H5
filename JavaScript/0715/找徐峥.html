@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            height: 600px;
+            border: 1px solid #000000;
+            font-size: 0;
+        }
+    </style>
+    <script src="./js/Utils.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var n = 2,
+            arr = [];
+        init();
+        function init() {
+            createImageCon(n);
+        }
+
+        function createImageCon(n) {
+            for (var i = 0; i < arr.length; i++) {
+                arr[i].remove();
+                arr[i] = null;
+            }
+            arr.length = 0;
+            for (var i = 0; i < n * n; i++) {
+                var img = Utils.createDocumentElem("img", {
+                    width: 600 / n + "px",
+                    height: 600 / n + "px",
+                });
+                if (i === 0) img.src = "img/1.png";
+                else img.src = "img/2.png";
+                arr.push(img);
+                img.addEventListener("click", clickHandler);
+            }
+            arr.sort(function () {
+                return Math.random() - 0.5;
+            }).forEach(function (item) {
+                document.querySelector("div").appendChild(item)
+            })
+        }
+
+        function clickHandler(e){
+            if(this.src.indexOf("1.png")>-1) n++;
+            createImageCon(n);
+        }
+    </script>
+</body>
+
+</html>
