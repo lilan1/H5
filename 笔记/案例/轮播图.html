@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #carousel {
+            width: 900px;
+            height: 300px;
+            position: relative;
+            left: 0;
+            right: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .imgCon {
+            width: 4500px;
+            height: 300px;
+            position: absolute;
+            font-size: 0;
+            transition: all 0.5s;
+            left: 0;
+        }
+
+        .imgCon>img {
+            width: 900px;
+            height: 300px;
+
+        }
+
+        .left,
+        .right {
+            position: absolute;
+            top: 120px;
+        }
+
+        .left {
+            left: 20px;
+        }
+
+        .right {
+            right: 20px;
+        }
+
+        ul {
+            position: absolute;
+            bottom: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul>li {
+            float: left;
+            width: 16px;
+            height: 16px;
+            border-radius: 16px;
+            border: 1px solid #FF0000;
+            background-color: rgba(255, 0, 0, 0);
+            margin-left: 10px;
+        }
+
+        ul>li:first-child {
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="carousel">
+        <div class="imgCon">
+            <img src="./img/a.jpeg">
+            <img src="./img/b.jpeg">
+            <img src="./img/c.jpeg">
+            <img src="./img/d.jpeg">
+            <img src="./img/e.jpeg">
+        </div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <img class="left" src="./img/left.png">
+        <img class="right" src="./img/right.png">
+    </div>
+    <script>
+        var imgCon, ul, pos = 0,pre;
+        init();
+        function init() {
+            imgCon = document.querySelector(".imgCon")
+            ul = document.querySelector("ul")
+            left = document.querySelector(".left")
+            right = document.querySelector(".right")
+
+            liArr = Array.from(ul.children);
+            ul.style.left = (imgCon.parentElement.offsetWidth - ul.offsetWidth) / 2 + "px"
+
+            left.addEventListener("click", clickHandler)
+            right.addEventListener("click", clickHandler)
+            liArr.forEach(function(item){
+                item.addEventListener("click",liClickHandler)
+            })
+            changePre();
+        }
+
+        function liClickHandler(e){
+            pos = liArr.indexOf(this);
+            imgCon.style.left = -900 * pos + "px";
+            changePre();
+        }
+
+        function changePre(){
+            if(pre){
+                pre.style.backgroundColor = "rgba(255,0,0,0)"
+            }
+            pre = liArr[pos];
+            pre.style.backgroundColor = "rgba(255,0,0,1)"
+        }
+
+        function clickHandler(e) {
+            if (this === left) {
+                pos--;
+                if (pos < 0) pos = imgCon.children.length - 1;
+            } else {
+                pos++;
+                if (pos > imgCon.children.length - 1) pos = 0;
+            }
+            imgCon.style.left = -900 * pos + "px";
+            changePre();
+        }
+    </script>
+</body>
+
+</html>

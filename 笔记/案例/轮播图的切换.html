@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .imgCon
+        {
+            width: 900px;
+            height: 300px;
+            background-image: url(./img/a.jpeg);
+            background-size: 100% 100%;
+            position: relative;
+            left:0;
+            right: 0;
+            margin: auto;
+            transition: all 0.5s;
+        }
+        .imgCon img
+        {
+            position: absolute;
+            right: 20px;
+            width: 80px;
+            height: 50px;
+            border:2px solid rgba(255,0,0,0);
+        }
+    </style>
+</head>
+<body>
+    <div class="imgCon">
+        <img src="./img/icon_a.jpeg">
+        <img src="./img/icon_b.jpeg">
+        <img src="./img/icon_c.jpeg">
+        <img src="./img/icon_d.jpeg">
+        <img src="./img/icon_e.jpeg">
+    </div>
+
+    <script>
+        var imgCon,pre;
+        var gap = 5;
+        init();
+        function init(){
+            imgCon = document.querySelector(".imgCon")
+            imgArr = Array.from(imgCon.children)
+
+            imgArr.forEach(function(item,index){
+                item.style.top = gap+(54+gap)*index+"px";
+                item.addEventListener("click",clickHandler)
+                changePre(item)
+            })
+        }
+
+        function clickHandler(e){
+            imgCon.style.backgroundImage = "url(" + this.src.replace("icon_","") + ")"
+            changePre(this);
+        }
+
+        function changePre(elem){
+            if(pre){
+                pre.style.borderColor = "rgba(255,0,0,0)";
+            }
+            pre = elem;
+            pre.style.borderColor = "#ff9d00"
+        }
+    </script>
+</body>
+</html>
