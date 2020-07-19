@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        /* 
+            e.type  事件类型
+            e.target  e.srcElement   事件目标对象
+            e.currentTarget    this    事件侦听的对象
+            e.cancalBubble  设置取消冒泡
+         */
+        var div = document.querySelector("div")
+        div.addEventListener("click",clickHandler)
+
+        // 回调函数不能传参，事件的回调函数也不能传参
+        // 这里的参数e就是我们创建的事件对象
+        // 系统默认的事件对象不能传参
+
+        // 传参
+        var evt = new Event()
+        evt.a = 1
+        function clickHandler(e){
+            console.log(evt===this);//true
+        }
+    </script>
+</body>
+</html>

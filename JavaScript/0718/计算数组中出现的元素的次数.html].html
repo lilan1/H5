@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,6,5,6,3,,8,5,31,6,6,1,8,6,3,1,6,2,4,5,6,1,3]
+
+        function repeatNum(arr){
+            var obj={};
+            for(var elem in arr){
+                if(arr[elem] in obj) obj[arr[elem]]++;
+                else obj[arr[elem]] = 1
+            }
+            return obj;
+        }
+
+        console.log(repeatNum(arr));
+
+    </script>
+</body>
+</html>
