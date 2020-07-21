@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .div0 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            /* left:100px; */
+            /* top:800px; */
+            margin: 100px;
+
+        }
+
+        .div1 {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            /* margin: 50px; */
+
+        }
+
+        .span0 {
+            display: none;
+            /* background: green; */
+            background-color: green;
+            position: absolute;
+            border-radius: 20px;
+            padding: 0 5px;
+            font-size: 12px;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="span0">aaaaaaaaaaa</span>
+    <div class="div0">
+        <div class="div1"></div>
+    </div>
+    <script>
+
+        // 凡是跟X，Y挂钩结尾的都是鼠标的坐标
+        // 跟Width和Height挂钩结尾的都是元素坐标
+
+        /*
+            clientX:距离可视区域左上角，跟页面是否滚动没有关系，只是跟可视窗口的左上角的位置
+            clientY:
+
+            offsetX:鼠标相对事件目标对象（e.target）的左上角的距离
+            offsetY:
+
+            用不好就不要用
+            layerX:如果目标对象是定位方式，值与offset相似
+            layerY:如果目标对象是非定位形式，取父容器的左上角的位置，如果父容器未定位，继续向上寻找已定位的元素
+
+            movementX:仅用于mousemove事件，这个值是鼠标移动时相对上次获取坐标的距离
+            movementY:
+
+            pageX:相对页面顶端左上角的位置
+            pageY:
+
+            screenX:相对屏幕左上角的位置
+            screenY:
+
+            x:和clientX、clientY相似
+            y:
+
+            按下键点击鼠标时变为true
+            altKey:false
+            ctrlKey:false
+            metaKey:false
+            shiftKey:false
+
+            针对mousedown事件的属性,当按下左键的时候（001）,中键（142）,右键（223）
+            button:0
+            buttons:0
+            which:1
+
+         */
+
+
+        /* 
+            鼠标事件：（鼠标事件的顺序：按下--->松开--->点击）
+            click   单击左键
+            dbclick 双击左键
+            mousedown   按下键
+            mouseup    释放键
+
+            具有冒泡的功能，可以监听子元素，可以收到鼠标滑入滑出子元素的冒泡事件
+            mouseover   滑过
+            mouseout    滑出
+
+            仅对侦听的对象起到事件接收效果
+            mouseenter  进入
+            mouseleave  离开
+
+            mousemove   移动 
+            contextmenu     右键菜单，单机右键被激活       
+        
+         */
+
+
+        //  红色块和蓝色块的提示信息显示    tooltip
+        // var div0 = document.querySelector(".div0")
+        // div0.addEventListener("mouseover",mouseHandler)
+        // div0.addEventListener("mousemove",mouseHandler)
+        // div0.addEventListener("mouseout",mouseHandler)
+        // var span0 = document.querySelector(".span0")
+        // function mouseHandler(e) {
+        //     // 这里的阻止默认事件是为了不让右键菜单出现，单纯的接收右键
+        //     e.preventDefault();
+        //     switch (e.type) {
+        //         case "mouseout":
+        //             span0.style.display = "none";
+        //             break;
+        //         case "mouseover":
+        //             span0.style.display = "inline-block"
+        //         case "mousemove":
+        //             span0.textContent = "这是" + getComputedStyle(e.target).backgroundColor + "颜色";
+        //             span0.style.left = e.pageX + "px"
+        //             span0.style.top = e.pageY + "px"
+        //             break;
+
+        //     }
+        // }
+
+
+
+
+
+
+
+
+
+
+        // var div = document.querySelector(".div0")
+        // var span = document.querySelector(".span0")
+        // div.addEventListener("mousemove", mouseHandler)
+        // div.addEventListener("mouseout", mouseHandler)
+        // div.addEventListener("mouseover", mouseHandler)
+
+        // function mouseHandler(e) {
+        //     e.preventDefault();
+        //     switch (e.type) {
+        //         case "mouseout":
+        //             span.style.display = "none"
+        //             break;
+        //         case "mouseover":
+        //             span.style.display = "inline-block"
+        //         case "mousemove":
+        //             span.textContent = "这是" + getComputedStyle(e.target).backgroundColor + "颜色"
+        //             span.style.left = e.pageX + "px";
+        //             span.style.top = e.pageY + "px"
+        //             break;
+        //     }
+        // }
+
+
+
+
+
+
+
+
+
+        var div = document.querySelector(".div0")
+        var span = document.querySelector(".span0")
+        div.addEventListener("mouseover", mouseHandler)
+        div.addEventListener("mouseout", mouseHandler)
+        div.addEventListener("mousemove", mouseHandler)
+
+        function mouseHandler(e) {
+            e.preventDefault();
+            switch (e.type) {
+                case "mouseout":
+                    span.style.display = "none"
+                    break;
+                case "mouseover":
+                    span.style.display = "inline-block"
+                case "mousemove":
+                    span.textContent = "这是" + getComputedStyle(e.target).backgroundColor + "颜色"
+                    span.style.left = e.pageX + "px";
+                    span.style.top = e.pageY + "px"
+                    break;
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

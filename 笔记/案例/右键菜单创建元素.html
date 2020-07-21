@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: none;
+        position: absolute;
+        z-index: 999;
+      }
+      li {
+        padding: 5px 20px;
+        background-color: skyblue;
+        user-select: none;
+        font-size: 12px;
+      }
+      li:hover {
+        background-color: steelblue;
+      }
+    </style>
+    <script src="./js/Utils.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li>新建</li>
+      <li>复制</li>
+      <li>剪切</li>
+      <li>粘贴</li>
+      <li>删除</li>
+    </ul>
+    <script>
+      var ul, pre, cloneElem;
+      var arr = ["新建", "复制", "剪切", "粘贴", "删除"];
+      init();
+      function init() {
+        ul = document.querySelector("ul");
+        document.addEventListener("contextmenu", contextMenu);
+        ul.addEventListener("mouseleave", contextMenu);
+        ul.addEventListener("click", clickHandler);
+      }
+
+      function contextMenu(e) {
+        if (e.type === "contextmenu") {
+          e.preventDefault();
+          ul.style.display = "block";
+          ul.style.left = e.clientX - 20 + "px";
+          ul.style.top = e.clientY - 10 + "px";
+        } else {
+          ul.style.display = "none";
+        }
+      }
+
+      function clickHandler(e) {
+        if (e.target.constructor !== HTMLLIElement) return;
+        ul.style.display = "none";
+        switch (arr.indexOf(e.target.textContent)) {
+          case 0:
+            createElem(e.clientX, e.clientY);
+            break;
+          case 1:
+            if (!pre) return;
+            cloneElem = pre.cloneNode(false);
+            break;
+          case 3:
+            if (!cloneElem) return;
+            document.body.appendChild(cloneElem);
+            cloneElem.addEventListener("click", selectClickHandler);
+            selectElem(cloneElem);
+            Object.assign(cloneElem.style, {
+              left: e.clientX - 13 + "px",
+              top: e.clientY - 13 + "px",
+            });
+            cloneElem = null;
+            break;
+          case 2:
+            if (!pre) return;
+            cloneElem = pre.cloneNode(false);
+          case 4:
+            pre.removeEventListener("click", selectClickHandler);
+            selectElem(null);
+            pre.remove();
+            pre = null;
+            break;
+        }
+      }
+
+      function createElem(x, y) {
+        var div = Utils.ce(
+          "div",
+          {
+            width: "25px",
+            height: "25px",
+            position: "absolute",
+            left: x - 13 + "px",
+            top: y - 13 + "px",
+            backgroundColor: Utils.randomColor(),
+          },
+          "body"
+        );
+        selectElem(div);
+        div.addEventListener("click", selectClickHandler);
+      }
+
+      function selectClickHandler(e) {
+        selectElem(this);
+      }
+
+      function selectElem(elem) {
+        if (pre) {
+          pre.style.border = "none";
+          Utils.dragOff(pre);
+        }
+        if (!elem) return;
+        pre = elem;
+        Utils.dragElem(pre);
+        pre.style.border = "2px solid #000000";
+      }
+    </script>
+  </body>
+</html>
