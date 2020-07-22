@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            width: 800px;
+            height: 400px;
+        }
+        input{
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="texts" cols="30" rows="10"></textarea>
+    <br>
+    <input type="text" id="msg" >
+    <button>提交</button>
+    <script>
+        /* 
+            e.key :""
+            e.code:
+            e.keyCode:
+            e.which:
+        
+        
+         */
+        init();
+
+        var texts,msg,bn
+        function init(){
+            texts = document.querySelector("#texts")
+            msg = document.querySelector("#msg")
+            bn = document.querySelector("button")
+            bn.addEventListener("click",clickHandler)
+            document.addEventListener("keydown",clickHandler)
+        }
+
+        function clickHandler(e){
+            if(e.type!=="click" && e.type !=="keydown") return 
+            if(e.keyCode && e.keyCode !== 13) return 
+            if(msg.value.trim().length<1)return;
+            texts.value += msg.value + "\n";
+            msg.value = ""
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 查找不包含某个元素^
+        // 在中括号内，第一个字符是上箭头，表示取反
+        console.log("acbdgdsd".match(/[^\^]/g));//不要上箭头
+
+        // 如果上箭头不作为第一个字符，则不表示取反
+        console.log("acbdgdsd".match(/[a^c]/g));
+
+        /* 
+        \w  --->  [a-zA-Z0-9_] 
+        \W  --->  [^a-zA-Z0-9_]
+        \d  --->  [0-9]
+        \D  --->  [^0-9]
+        \s  --->  查找空白字符
+        \S  --->  查找非空白字符
+        
+        
+        
+        */
+    </script>
+</body>
+</html>

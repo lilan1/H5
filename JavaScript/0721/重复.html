@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        {n}  n表示重复的次数
+         */
+        //  console.log("aaaaaaabb".match(/a{2}b{2}/g));
+
+        // 会找到8个空字符串
+        //  console.log("aaaaaaa".match(/a{0}/g));
+
+        // 先找最大的，贪婪匹配
+        //  console.log("aaaa aaa".match(/a{1,4}/g));
+
+        //  {1,}表示至少匹配一个，没上限
+
+        //  /a*/g  -->  /a{0,}/g
+        //  /a+/g  -->  /a{1,}/g
+        //  /a?/g  -->  /a{0,1}/g
+        var str = "aaaaaddddfffttttttjjjjj"
+        console.log(str.match(/([a-z])\1*/g));
+
+        //  ([a-z])\1  表示相同重复一个
+
+
+        // 非贪婪匹配  ?  一般用在*或者+或者{num,} 来匹配最少的部分
+        // 一般用在两个内容中间夹的内容取最少，比如双引号、书名号这种，尤其大量用于重复数据
+
+
+
+    </script>
+</body>
+</html>

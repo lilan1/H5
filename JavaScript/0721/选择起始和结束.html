@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 或者|
+        console.log("abcd".match(/ab|cd/g));
+
+        //     ab||cd  或者ab，或者空字符串 或者cd
+        //      |ab|cd   找到5个空字符串
+
+
+        // 起始符   ^   
+        // 结束符   $
+        // "bbaacc".match(/^a+/g)//表示必须是一个或者多个a开头。匹配结果为null
+    </script>
+</body>
+</html>
