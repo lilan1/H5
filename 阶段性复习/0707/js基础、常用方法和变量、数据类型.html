@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=""></script>
+</head>
+<body>
+    <a href="javascript:void(0)"></a>
+    <script>
+        /* 
+        js基础
+        1. 对于html来说，从上到下同步解释性文档
+            上面的代码无法调用下面的文档
+        2. 指定外部的js  
+        3. 如果加载的js中，变量或者函数名相同时，就会覆盖，我们叫做变量污染
+        4. 空的超链接
+        5. 内部脚本的代码，下面的可以调用上面的标签或者script
+        6. 注释
+         */
+
+        /* 
+        js变量和常用方法
+        1. js代码大小写规范严格
+        2. 首字母小写，驼峰命名
+        3. 常用函数
+            alert提示
+            confirm确定取消框
+            prompt弹出输入框，第二个参数是默认值
+         */
+        //  var a = confirm("是否继续？")
+        //  var a = confirm("是否继续？")
+        //  var a = confirm("是否继续？")
+        //  var a = confirm("是否继续？")
+        
+        var a = prompt("请输入","20")
+        alert(a)
+
+
+        /* 
+        连等赋值
+        */
+
+        /* 
+        js变量和常用方法
+        1. 如果不使用var声明，则该变量是window的属性，在函数以外的地方使用var声明，也是设置了window的属性
+        2. 变量的命名规则：
+            1. 驼峰命名
+            2. 临时变量_开头
+            3. 变量命名不可以是关键字和保留字
+            4. 全局变量名不能和window下的属性和方法同名
+        3.使用var定义并初始化的变量赋值没有返回值，没有使用var的会被赋值的结果返回
+        4. let和const
+            1. 常量定义的名称必须全部大写
+            2. 常量使用_区分单词
+            3. 使用常量的目的是不会被别人修改或者变量污染改变
+        */
+
+        /* 
+        数据类型和数据类型转换
+        1. 简单数据类型：数值型、字符型、布尔类型、null，undefined
+        2. 复杂数据类型：对象
+        3. 字符型：使用"",'',``的都是字符型，尤其注意``反引号包裹的也是字符型
+        4. 数值型
+        5. 布尔类型：
+            1. bool = !bool可以用来做开关
+            2. 所有类型的值都有与true或者false相等的值
+        6.undefined
+            1. 未定义值的变量都是undefined
+            2. 未定义值和定义值为undefined，不是一个概念，值是相同的，但是形态不同
+            3. 初始值定义为undefined的情况主要用于，初始值必须是undefined，或者将原有值的变量设置为undefined
+        7. null
+            1. 空值是将所有引用地址标记清空，用于清理内存和垃圾回收
+            2. 字符类型、数值类型、布尔类型和未定义型均不需要使用null清除  
+            3. null就是一个空对象指针
+            4. 如果定义的变量在将来准备用来保存对象，那么最好将其初始化为null而不是其他值，
+            5. 实际上undefined是派生自null，因此规定对他们的相等性测试要返回true 
+        8. var obj = {}这是一个空对象
+            obj = null对象整个是null，会被当做垃圾回收
+        9. 对象
+            1. 变量作为key的时候一定要使用中括号括起来
+            2. 变量作为obj的key的时候，只有使用中括号的方式才能获取，使用点语法获取不到     
+        */
+
+        
+        
+    </script>
+</body>
+</html>

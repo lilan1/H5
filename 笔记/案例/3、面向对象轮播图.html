@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html
+        {
+            font-size: 100px;
+        }
+        body
+        {
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script type="module">
+           import Carousel from "./js/Carousel.js";
+        window.addEventListener("resize",resizeHandler);
+           animation();
+           var arr=["./img/a.png","./img/b.png","./img/c.png","./img/d.png","./img/e.png","./img/left.png","./img/right.png"];
+           var arr1=["./img/a.jpeg","./img/b.jpeg","./img/c.jpeg","./img/d.jpeg","./img/e.jpeg","./img/left.png","./img/right.png"];
+
+           let carousel=new Carousel(arr);
+           carousel.appendTo("body");
+           carousel.setWH(true);
+
+           let carousel1=new Carousel(arr1);
+           carousel1.appendTo("body");
+           carousel1.setWH(600,200);
+
+           function animation(){
+               requestAnimationFrame(animation);
+               Carousel.UPDATE();
+           }
+
+           function resizeHandler(e){
+             document.documentElement.style.fontSize=document.documentElement.clientWidth*(100/screen.width)+"px";
+           }
+    </script>
+</body>
+</html>

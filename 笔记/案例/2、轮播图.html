@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import LoadImage from "./js/LoadImage.js";
+        import Utils from "./js/Utils.js";
+
+        var imageCon,left,right,dot;
+        var arr=["a","b","c","d","e","left","right"];
+        var basePath="./img/";
+        var expandedName="png";
+        var list;
+        var dotList=[];
+        var bnlist;
+        var carousel;
+        var pos=0;
+        var direction="";
+        var x=0;
+        var bool=false;
+        var speed=50;
+        var autoBool=false;
+        var time=200;
+        var pre;
+        const WIDTH=990;
+        const HEIGHT=330;
+        init();
+        function init(){
+            carousel=Utils.ce("div",{
+                width:WIDTH+"px",
+                height:HEIGHT+"px",
+                position:"relative",
+                margin:"auto",
+                overflow:"hidden",
+                left:0,
+                right:0,
+                backgroundColor:"rgba(255,0,0,0.1)",
+            },"body");
+            carousel.addEventListener("mouseenter",mouseHandler);
+            carousel.addEventListener("mouseleave",mouseHandler);
+            new LoadImage(arr,basePath,expandedName,finishHandler)
+        }
+
+        function mouseHandler(e){
+            if(e.type==="mouseenter"){
+                autoBool=false;
+                time=200;
+            }else{
+                autoBool=true;
+            }
+        }
+
+        function finishHandler(_list){
+            bnlist=_list.splice(-2);
+            list=_list.map(item=>{
+                item.style.width=WIDTH+"px";
+                item.style.height=HEIGHT+"px";
+                return item;
+            })
+            createImageCon();
+            createBn();
+            createDot();
+            animation();
+            changePre();
+        }
+
+        function createImageCon(){
+            imageCon=Utils.ce("div",{
+                width:WIDTH*2+"px",
+                height:HEIGHT+"px",
+                position:"absolute",
+                left:0,
+            })
+            imageCon.appendChild(list[0]);
+            carousel.appendChild(imageCon);
+        }
+
+        function createBn(){
+            bnlist.forEach((item,index)=>{
+                Object.assign(item.style,{
+                    position:"absolute",
+                    left:index===0 ? "20px" : "none",
+                    right:index===1 ? "20px" : "none",
+                    top:(HEIGHT-item.height)/2+"px"
+                });
+                item.addEventListener("click",clickHandler);
+                carousel.appendChild(item);
+            })
+        }
+
+        function createDot(){
+            dot=Utils.ce('ul',{
+                listStyle:"none",
+                margin:"0px",
+                padding:"0px",
+                position:"absolute",
+                bottom:"20px"
+            })
+            list.forEach((item,index)=>{
+               var li=Utils.ce("li",{
+                    width:"15px",
+                    height:"15px",
+                    backgroundColor:"rgba(255,0,0,0)",
+                    border:"1px solid #FF0000",
+                    borderRadius:"15px",
+                    float:"left",
+                    marginLeft:index===0 ? 0 : "10px"
+                },dot);
+                dotList.push(li);
+            });
+            carousel.appendChild(dot);
+            dot.style.left=(WIDTH-dot.offsetWidth)/2+"px";
+            dot.addEventListener("click",clickDotHandler);
+        }
+
+        function clickHandler(e){
+            if(bnlist.indexOf(this)===0){
+                pos--;
+                if(pos<0) pos=list.length-1;
+                direction="right";
+            }else{
+                pos++;
+                if(pos>list.length-1) pos=0;
+                direction="left";
+            }
+            createNextImage();
+        }
+
+        function clickDotHandler(e){
+            if(e.target.constructor!==HTMLLIElement) return;
+            var index=dotList.indexOf(e.target);
+            if(index===pos) return;
+            direction=index>pos ? "left" : "right";
+            pos=index;
+            createNextImage();
+        }
+
+        function createNextImage(){
+            if(direction==="left"){
+                imageCon.appendChild(list[pos]);
+                imageCon.style.left="0px"
+                x=0;
+            }else{
+                imageCon.insertBefore(list[pos],imageCon.firstChild);
+                imageCon.style.left=-WIDTH+"px";
+                x=-WIDTH;
+            }
+            bool=true;
+            changePre();
+        }
+
+        function animation(){
+            requestAnimationFrame(animation);
+            imgMove();
+            autoPlay();
+        }
+
+        function imgMove(){
+            if(!bool) return;
+            if(direction==="left"){
+                x-=speed;
+                if(x<=-WIDTH){
+                    x=0;
+                    bool=false;
+                    imageCon.firstElementChild.remove();
+                }
+                imageCon.style.left=x+"px";
+            }else{
+                x+=speed;
+                if(x>=0){
+                    x=0;
+                    bool=false;
+                    imageCon.lastElementChild.remove();
+                }
+                imageCon.style.left=x+"px";
+            }
+        }
+
+        function autoPlay(){
+            if(!autoBool)return;
+            time--;
+            if(time>0) return;
+            time=200;
+            var evt=new MouseEvent("click");
+            bnlist[1].dispatchEvent(evt);
+        }
+
+
+        function changePre(){
+            if(pre){
+                pre.style.backgroundColor="rgba(255,0,0,0)";
+            }
+            pre=dotList[pos];
+            pre.style.backgroundColor="rgba(255,0,0,0.6)";
+        }
+
+
+        
+    </script>
+</body>
+</html>

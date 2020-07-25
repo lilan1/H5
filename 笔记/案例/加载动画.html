@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        import LoadBall from "./js/LoadBall.js";
+        import Utils from "./js/Utils.js";
+        var arr=[];
+        init();
+         function init(){
+             var color=Utils.randomColor();
+            var x=(document.documentElement.clientWidth-60)/2;
+            var y=(document.documentElement.clientHeight-60)/2;
+            for(var i=0;i<20;i++){
+               var b=new LoadBall();
+                b.angle=i===0 ? 360 : i*15;
+                b.changeBg(color);
+                b.move(x,y)
+                b.alpha(1-i*0.05);
+                b.appendTo("body");
+                arr.push(b);
+            }
+
+            animation();
+            
+         }
+
+         function animation(){
+             requestAnimationFrame(animation);
+             arr.forEach(item=>{
+                 item.update();
+             })
+         }
+
+    </script>
+</body>
+</html>

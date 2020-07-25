@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+ 
+
+    <script>
+      var div,
+        arr=[
+        {dir:"right",dic:200},
+        {dir:"bottom",dic:100},
+        {dir:"right",dic:100},
+        {dir:"bottom",dic:200},
+        {dir:"left",dic:100},
+        {dir:"top",dic:100},
+        {dir:"left",dic:100},
+        {dir:"top",dic:100},
+      ],
+       ids,
+        speed=10;
+       
+
+
+      init();
+      function init() {
+        div = document.querySelector("div");
+        
+          Object.assign(div.style, {
+            width: "50px",
+            height: "50px",
+            border: "1px solid #000000",
+            backgroundColor: "red",
+            position:"absolute",
+            left:0,
+            top:0
+          });
+          div.index=0;
+          div.num=0;
+          ids= setInterval(animation, 16);
+      }
+
+      function animation() {
+          if(div.index>=arr.length){
+            clearInterval(ids);
+            return
+          }
+
+         if(changeMove(div,arr[div.index].dir,arr[div.index].dic)){
+             div.index++;
+             div.num=0;
+         }
+      }
+
+   
+
+      function changeMove(div,dir,dic) {
+        switch(dir){
+            case "left":
+            div.num--;
+            div.style.left=div.offsetLeft-1+"px";
+            if(div.num<=-dic) return true;
+            break;
+            case "right":
+            div.num++;
+            div.style.left=div.offsetLeft+1+"px";
+            if(div.num>=dic) return true;
+            break;
+            case "top":
+            div.num--;
+            div.style.top=div.offsetTop-1+"px";
+            if(div.num<=-dic) return true;
+            break;
+            case "bottom":
+            div.num++;
+            div.style.top=div.offsetTop+1+"px";
+            if(div.num>=dic) return true;
+            break;
+        }
+        return false;
+      }
+
+    
+
+
+
+
+        
+    </script>
+  </body>
+</html>

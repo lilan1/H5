@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 模块化开发会自动使用严格模式 -->
+    <script type="module">
+        // "use strict";
+
+        // 1. 变量必须声明后再使用
+        a=4;//报错
+        var a = 4;//正确
+
+        var b = 5;
+        console.log(window.b);//输出5，可以调用到
+
+        // 2. 函数的参数不能有同名属性
+        function fn(a,a){
+            console.log(a);
+        }
+
+        // 3. 不能使用with语句，因为with需要进行一系列的转换问题，还消耗内存
+
+        // 4. 不能对只读属性赋值，否则报错，比如字符串的长度
+
+        // 5. 不能使用前缀0表示八进制，严格模式不能使用八进制
+
+        // 6. 不能删除不可删除属性
+
+        // 7. eval不会在他的外层作用域引入变量
+        // eval反射，将字符串反射为该字符串变量名的对象
+
+        // 8. eval和arguments不能被重新赋值
+
+        // 9. 不能使用arguments.callee、arguments.callee.caller--->不想让开发人员使用匿名函数
+
+        // 10. 禁止this指向全局对象，顶层的this指向undefined，不能指向window，即不能在顶层代码中使用this
+
+        // 11. 增加保留字
+
+
+    </script>
+</body>
+</html>

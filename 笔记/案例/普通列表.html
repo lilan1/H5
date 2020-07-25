@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 40px;
+            font-size: 30px;
+            line-height: 40px;
+            text-align: center;
+            border:1px solid #000000;
+            float: left;
+            margin-left: 50px;
+            user-select: none;
+        }
+        p{
+            clear: both;
+            display: none;
+        }
+       
+    </style>
+</head>
+<body>
+    <div>水果</div>
+    <div>蔬菜</div>
+    <div>零食</div>
+    <div>饮料</div>
+    <br>
+    <br>
+    <p>猕猴桃
+        苹果
+        梨</p>
+    <p>白菜
+        土豆
+        地瓜</p>
+    <p>辣条
+        牛肉干
+        薯片</p>
+    <p>可乐
+        雪碧
+        果汁</p>
+    <script>
+        var arr,divs;
+        init()
+        function init(){
+            arr=Array.from(document.getElementsByTagName("p"));
+            divs=Array.from(document.getElementsByTagName("div"));
+            arr[0].style.display="block";
+            for(var i=0;i<divs.length;i++){
+                divs[i].onclick=clickHandler;
+            }
+        }
+
+
+        function clickHandler(){
+           var index=divs.indexOf(this);
+            for(var i=0;i<arr.length;i++){
+                if(i===index){
+                    arr[i].style.display="block";
+                }else{
+                    arr[i].style.display="none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

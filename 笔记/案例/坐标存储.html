@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/Utils.js"></script>
+    <style>
+        div {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            background-color: red;
+            border:1px solid #000000;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var arr=[],
+            record=false,
+            bool=false;
+       
+        var div;
+       
+        init();
+        function init(){
+            div=document.querySelector("div");
+            Utils.dragElem(div);
+            div.addEventListener("mousedown",mouseHandler);
+            document.addEventListener("mouseup",mouseHandler);
+            setInterval(animation,16);
+        }
+
+        function mouseHandler(e){
+            if(e.type==="mousedown"){
+               record=true;
+            }else if(e.type==="mouseup"){
+                bool=true;
+                record=false;
+                arr.reverse();
+            }
+        }
+
+        function animation(){
+            recordPath();
+            elemMove();
+        }
+
+        function recordPath(){
+            if(!record) return;
+            arr.push({x:div.offsetLeft,y:div.offsetTop});
+        }
+
+        function elemMove(){
+            if(!bool) return;
+            if(arr.length===0){
+                bool=false;
+                return;
+            }
+            var point=arr.pop();
+            div.style.left=point.x+"px";
+            div.style.top=point.y+"px";
+        }
+
+    </script>
+</body>
+</html>
