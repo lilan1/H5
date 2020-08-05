@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+      import FaceStar from "./js/FaceStar.js";
+        let arr=["快速包装","快递服务","送货上门"]
+        arr.forEach(item=>{
+            let face=new FaceStar(item);
+            face.appendTo("body");
+            face.addEventListener("change",changeHandler);
+        })
+
+        function changeHandler(e){
+            console.log(e.pos,this.label);
+        }
+     
+    </script>
+</body>
+</html>

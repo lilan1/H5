@@ -54,7 +54,7 @@
 
 
         // 2. error，当遇到错误的时候执行，比如地址错误，img的路径错误等等
-        //      error和load用于图片的加载，Ajax通信以及JSON或者其
+        //      error和load用于图片的加载，Ajax通信以及JSON或者其他文件的加载等
         //      error是加载失败事件；load是加载成功事件
 
         // 3. load，加载
@@ -124,7 +124,6 @@
             console.log(input.selectionStart);
             console.log(input.selectionEnd);
 
-            // 将选择的内容删除,好像代码有问题
             input.value = input.value.slice(0,input.selectionStart) + input.value.slice(input.selectionEnd)
         }
 

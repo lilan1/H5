@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(1);
+
+        new Promise(function (res, rej) {
+            console.log(2);
+            res();
+        })
+            .then(function () {
+                console.log(3);
+                Promise.resolve().then(function () {
+                    console.log(5);
+                    setTimeout(function () {
+                        console.log(6);
+                        Promise.resolve().then(function () {
+                            console.log(7);
+                        });
+                        setTimeout(function () {
+                            console.log(8);
+                        }, 0);
+                    }, 0);
+                });
+            })
+            .then(function () {
+                console.log(4);
+            });
+
+
+        setTimeout(function () {
+            console.log(9);
+            new Promise(function (res) {
+                res();
+                console.log(10);
+            }).then(function () {
+                console.log(11);
+            });
+        });
+
+
+        Promise.resolve().then(function () {
+            setTimeout(function () {
+                Promise.resolve().then(function () {
+                    console.log(12);
+                });
+                console.log(13);
+            }, 0);
+        });
+
+
+        setTimeout(function () {
+            setTimeout(function () {
+                setTimeout(function () {
+                    Promise.resolve().then(function () {
+                        console.log(14);
+                    });
+                    console.log(15);
+                }, 0);
+                console.log(16);
+            }, 0);
+            console.log(17);
+        }, 0);
+
+        
+        console.log(18);
+
+
+        new Promise(function (res) {
+            console.log(19);
+            setTimeout(function () {
+                console.log(20);
+            }, 0);
+        });
+
+
+    </script>
+</body>
+
+</html>

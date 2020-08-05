@@ -21,31 +21,63 @@
     <script>
         var n = 2,
             arr = [];
+        // init();
+        // function init() {
+        //     createImageCon(n);
+        // }
+
+        // function createImageCon(n) {
+        //     for (var i = 0; i < arr.length; i++) {
+        //         arr[i].remove();
+        //         arr[i] = null;
+        //     }
+        //     arr.length = 0;
+        //     for (var i = 0; i < n * n; i++) {
+        //         var img = Utils.createDocumentElem("img", {
+        //             width: 600 / n + "px",
+        //             height: 600 / n + "px",
+        //         });
+        //         if (i === 0) img.src = "img/1.png";
+        //         else img.src = "img/2.png";
+        //         arr.push(img);
+        //         img.addEventListener("click", clickHandler);
+        //     }
+        //     arr.sort(function () {
+        //         return Math.random() - 0.5;
+        //     }).forEach(function (item) {
+        //         document.querySelector("div").appendChild(item)
+        //     })
+        // }
+
+        // function clickHandler(e){
+        //     if(this.src.indexOf("1.png")>-1) n++;
+        //     createImageCon(n);
+        // }
+
         init();
-        function init() {
+        function init(){
             createImageCon(n);
         }
-
-        function createImageCon(n) {
-            for (var i = 0; i < arr.length; i++) {
+        function createImageCon(n){
+            for(var i = 0;i<arr.length;i++){
                 arr[i].remove();
-                arr[i] = null;
+                arr[i]=null;
             }
             arr.length = 0;
-            for (var i = 0; i < n * n; i++) {
-                var img = Utils.createDocumentElem("img", {
-                    width: 600 / n + "px",
-                    height: 600 / n + "px",
+            for(var i=0;i<n*n;i++){
+                var img = Utils.createDocumentElem("img",{
+                    width:600/n+"px",
+                    height:600/n+"px"
                 });
-                if (i === 0) img.src = "img/1.png";
+                if(i===0) img.src = "img/1.png";
                 else img.src = "img/2.png";
-                arr.push(img);
-                img.addEventListener("click", clickHandler);
+                arr.push(img)
+                img.addEventListener("click",clickHandler);
             }
-            arr.sort(function () {
-                return Math.random() - 0.5;
-            }).forEach(function (item) {
-                document.querySelector("div").appendChild(item)
+            arr.sort(function(){
+                return  Math.random()-0.5;
+            }).forEach(function(item){
+                document.querySelector("div").appendChild(item);
             })
         }
 

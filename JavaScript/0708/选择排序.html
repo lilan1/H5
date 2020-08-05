@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //将数组分为排序和未排序，在未排序数组中选择一个最小的元素，然后与未排序数组的第一个元素进行交换，然后将未排序数组的第一个元素归为排序 
+
+
+        var swap = function (array, index1, index2) {
+            var aux = array[index1];
+            array[index1] = array[index2];
+            array[index2] = aux;
+        }
+
+        var selectionSort = function (array) {
+            var length = array.length,
+                indexMin;
+            for (var i = 0; i < length - 1; i++) {
+                indexMin = i;
+                for (var j = i; j < length; j++) {
+                    if (array[indexMin] > array[j]) {
+                        indexMin = j; 
+                    }
+                }
+                if (i !== indexMin) {
+                    swap(array, i, indexMin); 
+                }
+            } 
+            return array;
+        }
+
+
+
+        var a = [9, 5, 7, 8, 3, 6, 2, 4, 1];
+        console.log(selectionSort(a));
+
+    </script>
+</body>
+
+</html>

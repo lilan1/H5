@@ -85,13 +85,12 @@
                 th.textContent = j;
             }
             table.appendChild(trTh);
-            for (let i = 1; i < arr.length; i++) {
+            for (let i = 0; i < arr.length; i++) {
                 var tr = document.createElement("tr")      
                 for (var elem in arr[i]) {
                     var td = document.createElement("td");
                     td.textContent = arr[i][elem]
                     tr.appendChild(td);
-                    console.log(td);
                 }
                 table.appendChild(tr)
             }

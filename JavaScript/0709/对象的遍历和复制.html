@@ -34,9 +34,9 @@
         }
         console.log(obj_new) */
 
-        // 上面这种复制方式的弊端
+        // 上面这种复制方式的弊端，只能完成广度遍历，不能完成深度遍历
         
-        var obj = {
+      /*   var obj = {
             name: "李岚",
             age: 18,
             "tel": 17700000000, 
@@ -65,7 +65,30 @@
         console.log(obj_new.school.add);
 
         obj.age = 99;
-        console.log(obj_new.age);
+        console.log(obj_new.age); */
+
+        // 对象的复制2：这种方式仍然存在弊端，对象中的方法会被忽略，无法复制
+        var obj = {
+            name: "李岚",
+            age: 18,
+            "tel": 17700000000, 
+            school:{
+                name:"southwest",
+                add:"chongqing",
+            },
+            fn1:function(){
+                return 0;
+            }
+        } 
+        var obj_new = JSON.parse(JSON.stringify(obj));
+        console.log(obj_new.school);
+        // 这种方式复制的对象是彻底的复制，其中的对象里层也不是引用，而是完全独立
+
+
+
+
+
+    
 
 
 
